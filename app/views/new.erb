@@ -1,0 +1,15 @@
+<% if @article.id == nil %>
+<form method="POST" action="/articles">
+<% else %>
+<form method="POST" action="/articles/<%=@article.id%>">
+    <input id="hidden" type="hidden" name="_method" value="DELETE" />
+    <input type="submit" value="delete this article">
+</form>
+
+ 
+<% end %>
+<form method="POST" action="/articles">
+    <input type="text" name="title"   value="<%= @article.title %>" />
+    <input type="text" name="content"   value="<%= @article.content %>" />
+    <input type="submit" />
+</form>
